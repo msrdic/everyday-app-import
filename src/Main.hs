@@ -9,7 +9,7 @@ import qualified Data.Vector as V
 import Control.Concurrent (threadDelay)
 import Control.Monad.IO.Class (liftIO)
 
-import EverydayAppClient (Status, YYMMDD, HabitId, mark, skip, unmark)
+import EverydayAppClient (Status (..), YYMMDD, HabitId, mark, skip, unmark)
 
 data DateEntry = DateEntry
     { date   :: !String
@@ -54,7 +54,7 @@ data Action = Mark | Skip | Unmark
 performHabitAction :: HabitId -> YYMMDD -> Action -> IO Status
 performHabitAction habitId date Mark = mark date habitId
 performHabitAction habitId date Skip = skip date habitId
-performHabitAction habitId date Unmark = unmark date habitId
+performHabitAction _ _ Unmark = return OK
 
 performHabit :: HabitId -> YYMMDD -> String -> IO Status
 performHabit hid d val | val == "1" = performHabitAction hid d Mark
@@ -84,16 +84,16 @@ main = do
               fl = floss de
               med = meditate de
 
-          -- water: 362803
-          s1 <- performHabit 362803 d wat
-          -- pills: 363050
-          s2 <- performHabit 363050 d (pills p1 p2 p3)
-          -- meditate: 362793
-          s3 <- performHabit 362793 d med
-          -- mobility: 577202
-          s4 <- performHabit 577202 d mob
-          -- floss: 577209
-          s5 <- performHabit 577209 d fl
+          -- water: 578044
+          s1 <- performHabit 578044 d wat
+          -- pills: 578045
+          s2 <- performHabit 578045 d (pills p1 p2 p3)
+          -- meditate: 578046
+          s3 <- performHabit 578046 d med
+          -- mobility: 578048
+          s4 <- performHabit 578048 d mob
+          -- floss: 578053
+          s5 <- performHabit 578053 d fl
 
           putStrLn $ unpack d ++ ": " ++ show s1 ++ "," ++ show s2 ++ "," ++ show s3 ++ "," ++ show s4 ++ "," ++ show s5
           

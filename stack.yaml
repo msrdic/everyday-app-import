@@ -37,7 +37,7 @@ packages:
 #
 extra-deps:
  - git: https://github.com/msrdic/everyday-app-hs
-   commit: 1ac303162f5b1fdcc753e1e43016e309bdc507bf
+   commit: b240beb30dc7350d7dc43163df86a7b47daf338a
 # - acme-missiles-0.3
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a

@@ -10,11 +10,11 @@ packages:
     git: https://github.com/msrdic/everyday-app-hs
     pantry-tree:
       size: 427
-      sha256: 9635e1703205a48fd57e3a298d43142429d1d476a12ae0d1d0ac432be2287c7c
-    commit: 1ac303162f5b1fdcc753e1e43016e309bdc507bf
+      sha256: 8c0bf6194e231754e68e2a1f559d96fe53baf7c09684b51ef740edb09d7e4b9a
+    commit: b240beb30dc7350d7dc43163df86a7b47daf338a
   original:
     git: https://github.com/msrdic/everyday-app-hs
-    commit: 1ac303162f5b1fdcc753e1e43016e309bdc507bf
+    commit: b240beb30dc7350d7dc43163df86a7b47daf338a
 snapshots:
 - completed:
     size: 532832
